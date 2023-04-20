@@ -23,11 +23,11 @@ pg.init()
 run = True
 win_x, win_y = 800, 480
 screen = pg.display.set_mode((win_x, win_y))
-firstObject = Rectangle(20,20,100,100) # สร้าง Object จากคลาส Rectangle ขึ้นมา
+box = Rectangle(20,20,100,100) # สร้าง Object จากคลาส Rectangle ขึ้นมา
 
 while(run):
     screen.fill((255, 255, 255))
-    firstObject.draw(screen) # ใส่ screen เข้าไปด้วยเพราะว่าคำสั่ง pg.draw.rect จะเป็นจะต้องระบุระนาบว่าต้องการสร้างรูปบนระนาบใด
+    box.draw(screen) # ใส่ screen เข้าไปด้วยเพราะว่าคำสั่ง pg.draw.rect จะเป็นจะต้องระบุระนาบว่าต้องการสร้างรูปบนระนาบใด
     pg.display.update()
     
     for event in pg.event.get():
@@ -35,14 +35,14 @@ while(run):
             pg.quit()
             run = False
         if event.type == pg.KEYDOWN and event.key == pg.K_w: #ปุ่มถูกกดลงและเป็นปุ่ม w
-            firstObject.setx(firstObject.getx()+1)
+            box.setx(box.getx()+1)
             print("Key w down")
         if event.type == pg.KEYUP and event.key == pg.K_a: #ปุ่มถูกปล่อยและเป็นปุ่ม a
-            firstObject.setx(firstObject.getx()-1)
+            box.setx(box.getx()-1)
             print("Key a up") 
         if event.type == pg.KEYDOWN and event.key == pg.K_s: #ปุ่มถูกกดลงและเป็นปุ่ม s
-            firstObject.sety(firstObject.gety()+5)
+            box.sety(box.gety()+5)
             print("Key s down")
         if event.type == pg.KEYUP and event.key == pg.K_d: #ปุ่มถูกปล่อยและเป็นปุ่ม d
-            firstObject.sety(firstObject.gety()-5)
+            box.sety(box.gety()-5)
             print("Key d up") 
