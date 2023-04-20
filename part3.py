@@ -60,7 +60,7 @@ class InputBox:
                     if self.canalpha:
                         self.text += event.unicode
                     elif not self.canalpha:
-                        if chr(event.key).isnumeric():
+                        if event.unicode.isnumeric():
                             self.text += event.unicode
                 
                 # Re-render the text.
